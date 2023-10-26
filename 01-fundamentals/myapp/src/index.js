@@ -7,18 +7,18 @@ function Input(props) {
 };
 
 function Form(manyInputs) {
-    return(<>
+    return (<>
         <form onSubmit={"#"}>
             {
                 [
-                    {type:"text",name:"Name",placeholder:"Name"},
-                    {type:"text",name:"LastName",placeholder:"Last Name"},
-                    {type:"number",name:"age",placeholder:"00"},
+                    { type: "text", name: "Name", placeholder: "Name" },
+                    { type: "text", name: "LastName", placeholder: "Last Name" },
+                    { type: "number", name: "age", placeholder: "00" },
                 ].map(toIn => <Input
                     type={toIn.type}
                     name={toIn.name}
                     placeholder={toIn.placeholder}
-                ></Input> )
+                ></Input>)
             }
         </form>
     </>);
