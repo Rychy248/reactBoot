@@ -1,8 +1,9 @@
-import Gretting from "./components/Greeting";
 import Sectionalize from "./components/Sectionalize";
+import Gretting from "./components/Greeting";
 import Books from "./components/book/Books";
 
 export default function App() {
+
     return (
         <div className="container text-center mt-4">
             <Sectionalize
@@ -12,11 +13,11 @@ export default function App() {
                         argsForComp:{
                             booksList:[
                                 {
-                                    title : "El Mundo de sofia",
-                                    imgRef : null,
+                                    title : "One Lost Soul: A chilling British detective crime thriller (The Hidden Norfolk Murder Mystery Series Book 1)",
+                                    imgRef : "./images/books/oneLostSoul.jpg",
                                     auth : {
-                                        name: "Jostein",
-                                        lastName : "Gardein"
+                                        name: "J. M.",
+                                        lastName : "Dalgliesh"
                                     }
                                 },
                                 {
@@ -28,11 +29,19 @@ export default function App() {
                                     }
                                 },
                                 {
-                                    title : "El Mito de sísifo",
-                                    imgRef : "sisifo.png",
+                                    title : "The Democrat Party Hates America",
+                                    imgRef : "./images/books/TheDemocrat.jpg",
                                     auth : {
-                                        name: "Albert",
-                                        lastName : "Camus"
+                                        name: "R. Levin",
+                                        lastName : "Mark"
+                                    }
+                                },
+                                {
+                                    title : "Never LIE",
+                                    imgRef : "./images/books/NeverLie.jpg",
+                                    auth : {
+                                        name: "Freida",
+                                        lastName : "McFadden"
                                     }
                                 }
                             ]

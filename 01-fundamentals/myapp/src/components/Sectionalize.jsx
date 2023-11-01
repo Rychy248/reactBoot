@@ -4,7 +4,7 @@ function renderComponent({Component, argsForComp, title, footer, key}) {
     return (
         <div key={key} className="row align-items-start">
                 <div className="card text-center border-primary mb-3">
-                    <div className="card-header border-warning">{title}</div>
+                    <div className="card-header border-primary">{title}</div>
                     <div className="card-body">
                         <Component {...argsForComp} />
                     </div>

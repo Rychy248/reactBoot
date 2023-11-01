@@ -16,6 +16,8 @@ export default function Form(manyInputs) {
                     placeholder={toIn.placeholder}
                 />)
             }
+            {/* children of component called */}
+            {manyInputs.children}
         </form>
     </>);
 };
