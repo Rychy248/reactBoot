@@ -1,6 +1,6 @@
 
 
-function renderComponent({Component, argsForComp, title, footer, key}) {
+function renderComponent({key, Component, argsForComp, cardLayout:{title, footer}}) {
     return (
         <div key={key} className="row align-items-start">
                 <div className="card text-center border-primary mb-3">
@@ -17,7 +17,7 @@ function renderComponent({Component, argsForComp, title, footer, key}) {
 export default function Sectionalize({components}) {
     return<>
         {
-            components.map((component, index)=> renderComponent({...component, key:index}))
+            components.map((itemToRender, index)=> renderComponent({key:index, ...itemToRender}))
         }
     </>;
 };

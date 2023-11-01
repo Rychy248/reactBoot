@@ -1,6 +1,6 @@
 
 export default function Title({title}) {
     return <>
-        <h5 className="card-title">{title}</h5>
+        <h6 className="card-title">{title}</h6>
     </>;
 };

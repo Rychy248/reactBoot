@@ -1,8 +1,13 @@
-import Input from "./Input";
+import Input from "../elements/Input";
 
-export default function Form(manyInputs) {
+function formHandler(e) {
+    alert("Form subbmit pressed");
+    e.preventDefault();
+};
+
+export default function Form(otherNameForProps) {
     return (<>
-        <form onSubmit={"#"}>
+        <form onSubmit={formHandler}>
             {
                 [
                     { className:"form-control", type: "text", name: "Name", placeholder: "Name" },
@@ -10,14 +15,17 @@ export default function Form(manyInputs) {
                     { className:"form-control", type: "number", name: "age", placeholder: "00" },
                 ].map((toIn, index) => <Input
                     key={index}
-                    type={toIn.type}
-                    name={toIn.name}
-                    className={toIn.className}
-                    placeholder={toIn.placeholder}
+                    // type={toIn.type}
+                    // name={toIn.name}
+                    // className={toIn.className}
+                    // placeholder={toIn.placeholder}
+                    {...toIn}
                 />)
             }
             {/* children of component called */}
-            {manyInputs.children}
+            {otherNameForProps.children}
         </form>
     </>);
 };
+
+

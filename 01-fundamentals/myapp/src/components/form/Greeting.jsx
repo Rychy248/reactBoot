@@ -1,6 +1,6 @@
 import Form from "./Form";
 
-export default function Gretting({OtherComponent}) {
+export default function Gretting() {
     return <>
         <h1>¡Welcome!</h1>
         <Form>

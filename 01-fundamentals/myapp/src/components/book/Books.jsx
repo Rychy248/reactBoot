@@ -1,21 +1,25 @@
 import Book from "./Book"
+import AddBookForm from "./addBook/AddBookForm";
 
-export default function Books({booksList}) {
-    return <div
-        className="row row-cols-1 row-cols-md-3 g-4"
-    >
-        {
-            booksList.map((book,index)=>
-                <Book 
-                    key={index}
-                    title = {book.title}
-                    imgRef = {book.imgRef}
-                    auth = {{
-                        name: book.auth.name,
-                        lastName : book.auth.lastName
-                    }} 
-                />
-            )
-        }
-    </div>;
+export default function Books({booksList, setBookList}) {
+    return (
+        <>
+            <AddBookForm
+                setBookList={setBookList}
+            />
+            <div className="row row-cols-2 row-cols-md-5 g-4" >
+                {
+                    booksList.map((book,index)=>
+                        <Book 
+                            key={index}
+                            // title = {book.title}
+                            // imgRef = {book.imgRef}
+                            // auth = { book.auth} 
+                            {...book}
+                        />
+                    )
+                }
+            </div>
+        </>
+    );
 };

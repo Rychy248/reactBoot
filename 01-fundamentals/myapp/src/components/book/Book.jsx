@@ -3,7 +3,7 @@ import Image from "./Image"
 import Title from "./Title"
 
 
-export default function Book({auth, lastName, imgRef, title}) {
+export default function Book({auth:{name,lastName}, imgRef, title}) {
     const inlineStyleObject = {
         border:"solid 3px black"
     };
@@ -18,7 +18,7 @@ export default function Book({auth, lastName, imgRef, title}) {
                         style={inlineStyleObject}
                     >
                         <Title title={title}/>
-                        <Author name={auth.name} lastName={auth.lastName} />
+                        <Author name={name} lastName={lastName} />
                     </div>
                 </div>
             </div>
