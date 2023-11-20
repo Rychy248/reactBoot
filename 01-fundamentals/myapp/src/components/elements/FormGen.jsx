@@ -1,5 +1,12 @@
 import Input from "./Input";
-
+/**
+ * @param {Object} formInputs - Inputs for the form.
+ * @param {function} formHandler - Action on submit form
+ * @returns {JSX.Element}
+ *
+ * For detailed documentation, please refer to:
+ * [Documentation](./formGen.md) <!-- Replace with your actual URL or path -->
+ */
 export default function FormGen({formInputs, formHandler}) {
     function renderSingleInputs(inputs,otherProperties) {
         return inputs.map((toIn, index) => <Input

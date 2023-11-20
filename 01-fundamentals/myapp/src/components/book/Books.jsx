@@ -16,6 +16,7 @@ export default function Books({booksList, setBookList}) {
                             // imgRef = {book.imgRef}
                             // auth = { book.auth} 
                             {...book}
+                            number={index + 1}
                         />
                     )
                 }
@@ -23,3 +24,4 @@ export default function Books({booksList, setBookList}) {
         </>
     );
 };
+
