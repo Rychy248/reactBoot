@@ -30,7 +30,7 @@ export default function Tours({ }) {
         </Div>
 
         <Div className="section-center featured-center">
-            {tours.map((tour,index) => <Article className="tour-card">
+            {tours.map((tour,index) => <Article className="tour-card" key={index}>
                     <Div className="tour-img-container">
                         <Img src={ tour.img } className="tour-img" alt="" />
                         <P className="tour-date">{ tour.date }</P>
