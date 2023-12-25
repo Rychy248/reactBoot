@@ -3,10 +3,11 @@ import Btn from "../tagsComponents/Btn";
 import I from "../tagsComponents/I";
 import Img from "../tagsComponents/Img";
 import Div from "../tagsComponents/Div";
-import Ul, { Li } from "../tagsComponents/Ul";
-import A from "../tagsComponents/A";
+import Nav from "../tagsComponents/Nav";
 
-export default function Nav({ }) {
+import { Options, Icons } from "./tools/LinksIcons"
+
+export default function Navbar({ }) {
     const navData = { // eachItem of the list is an anchor
         options:{
             ulData:{ className:"nav-links", id:"nav-links" },
@@ -28,7 +29,7 @@ export default function Nav({ }) {
     };
 
     return (
-        <nav className="navbar">
+        <Nav className="navbar">
             <Div className="nav-center">
                 <Div className="nav-header">
                     <Img src={logo} className="nav-logo" alt="backroads" />
@@ -37,21 +38,9 @@ export default function Nav({ }) {
                     </Btn>
                 </Div>
                 {/* <!-- left this comment on purpose --> */}
-                <Ul { ...navData.options.ulData }>
-                    {navData.options.items.map((item, index) => <Li key={index} >
-                        <A href={item.href} className={item.className}>
-                            {item.children.textInner}
-                        </A>
-                    </Li>)}
-                </Ul>
-                <Ul { ...navData.icons.ulData}>
-                    {navData.icons.items.map((item, index)=> <Li key={index}>
-                        <A className={item.className} href={item.href} target={item.target} >
-                            <I className={ item.children.className }></I>
-                        </A>
-                    </Li>)}    
-                </Ul>
+                <Options options={navData.options} />
+                <Icons icons={navData.icons} />
             </Div>
-        </nav>
+        </Nav>
     );
 };

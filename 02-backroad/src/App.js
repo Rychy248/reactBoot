@@ -1,6 +1,6 @@
 import './App.css';
 
-import Nav from './components/layout/Nav';
+import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
 import About from './components/About';
@@ -10,9 +10,9 @@ import Tours from './components/Tours';
 
 function App() {
 
-  return (
+  return(
     <>
-      <Nav />
+      <Navbar />
 
       <Home />
       <About />
@@ -22,6 +22,6 @@ function App() {
       <Footer/ >
     </>
   );
-}
+};
 
 export default App;

@@ -1,9 +1,9 @@
-import Section from "./tagsComponents/Section"
+import Article from "./tagsComponents/Article"
 import Div from "./tagsComponents/Div"
 import H from "./tagsComponents/H"
-import Span from "./tagsComponents/Span"
-import Article from "./tagsComponents/Article"
 import I from "./tagsComponents/I"
+import Section from "./tagsComponents/Section"
+import Span from "./tagsComponents/Span"
 
 import ParaphsGenerator from "./componentsTools/ParaphsGenerator"
 
