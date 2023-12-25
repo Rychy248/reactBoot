@@ -1,11 +1,12 @@
-import Section from './tagsComponents/Section';
+// local imports
+import A from './tagsComponents/A';
 import Div from './tagsComponents/Div';
 import H from './tagsComponents/H';
-import A from './tagsComponents/A';
+import Section from './tagsComponents/Section';
 
 import ParaphsGenerator from './componentsTools/ParaphsGenerator';
 
-export default function Home({ }) {   
+export default function Home() {   
 
     return <Section className="hero" id="home">
         <Div className="hero-banner">

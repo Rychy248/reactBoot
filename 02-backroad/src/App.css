@@ -558,3 +558,23 @@ Navbar
     color: var(--clr-primary-8);
   }
 }
+
+
+/* FADE  */
+.animate-fade {
+  position: relative;
+  -webkit-animation-name: animatefade;
+  -webkit-animation-duration: 2s;
+  animation-name: animatefade;
+  animation-duration: 2s
+}
+
+@-webkit-keyframes animatefade {
+  from {bottom:-50px; opacity:0 } 
+  to {bottom:0px; opacity:1 }
+}
+
+@keyframes animatefade { 
+  from{bottom:-50px; opacity:0 } 
+  to{bottom:-0px; opacity:1 }
+}

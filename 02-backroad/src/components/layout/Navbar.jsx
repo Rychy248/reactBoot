@@ -1,32 +1,34 @@
+// react imports
+import { useEffect, useState } from "react";
+// third Modules
+import {Api, Loader} from "../componentsTools";
+// local imports
+//-- static
 import logo from "../../imgs/logo.svg";
+//--componets
+/** --- replaced by two other ways to import
 import Btn from "../tagsComponents/Btn";
 import I from "../tagsComponents/I";
 import Img from "../tagsComponents/Img";
 import Div from "../tagsComponents/Div";
 import Nav from "../tagsComponents/Nav";
+ */
+import { Btn, I, Img } from "../tagsComponents/index";
+import { Div, Nav } from "../tagsComponents";
+import { Icons, Options } from "./tools/LinksIcons"
 
-import { Options, Icons } from "./tools/LinksIcons"
-
-export default function Navbar({ }) {
-    const navData = { // eachItem of the list is an anchor
-        options:{
-            ulData:{ className:"nav-links", id:"nav-links" },
-            items:[
-                {href:"#home", className:"nav-link", children:{ textInner:"home"} },
-                {href:"#about", className:"nav-link", children:{ textInner:"about"} },
-                {href:"#services", className:"nav-link", children:{ textInner:"services"} },
-                {href:"#tours", className:"nav-link", children:{ textInner:"tour"} }
-            ],
-        },
-        icons:{
-            ulData:{ className:"nav-icons" },
-            items:[
-                {href:"https://www.twitter.com", target:"_blank", className:"nav-icon", children: { i:{ className:"fab fa-facebook"}} },
-                {href:"https://www.twitter.com", target:"_blank", className:"nav-icon", children: { i:{ className:"fab fa-twitter"}} },
-                {href:"https://www.twitter.com", target:"_blank", className:"nav-icon", children: { i:{ className:"fab fa-squarespace"}} }
-            ]
-        }
-    };
+export default function Navbar() {
+    const [navData, setNavData] = useState();
+    const [componentState, setComponentState] = useState("Loading");
+    
+    useEffect(() => {
+        Api("/FetchNavData", "Get")
+        .then(data => {
+            setNavData(data);
+            setComponentState("Loaded");
+        })
+        .catch(err =>{ throw err; })
+    }, []);
 
     return (
         <Nav className="navbar">
@@ -37,9 +39,13 @@ export default function Navbar({ }) {
                         <I className="fas fa-bars"></I>
                     </Btn>
                 </Div>
-                {/* <!-- left this comment on purpose --> */}
-                <Options options={navData.options} />
-                <Icons icons={navData.icons} />
+                {(componentState !== "Loading") &&
+                    <>
+                        <Options className="animate-fade" options={navData.options} />
+                        <Icons className="animate-fade" icons={navData.icons} />
+                    </>
+                }
+                <Loader className={`nav-loader ${componentState !== "Loading" && "fadeOut"}`} />
             </Div>
         </Nav>
     );

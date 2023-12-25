@@ -1,35 +1,40 @@
-import P from "../tagsComponents/P";
-import Span from "../tagsComponents/Span";
-
-import {Options, Icons} from "./tools/LinksIcons";
+// react imports
+import { useState, useEffect } from "react";
+// third imports
+import { Api, Loader } from "../componentsTools";
+// local imports
+import { P, Span } from "../tagsComponents/index"
+import { Options, Icons } from "./tools/LinksIcons";
 
 function Footer({ }) {
-    const navData = { // eachItem of the list is an anchor
-        options:{
-            ulData:{ className:"footer-links" },
-            items:[
-                {href:"#home", className:"footer-link", children:{ textInner:"home"} },
-                {href:"#about", className:"footer-link", children:{ textInner:"about"} },
-                {href:"#services", className:"footer-link", children:{ textInner:"services"} },
-                {href:"#tours", className:"footer-link", children:{ textInner:"tour"} },
-                {href:"#featured", className:"footer-link", children:{textInner:"featured"} }
-            ],
-        },
-        icons:{
-            ulData:{ className:"footer-icons" },
-            items:[
-                {href:"https://www.twitter.com", target:"_blank", className:"footer-icon", children: { i:{ className:"fab fa-facebook"}} },
-                {href:"https://www.twitter.com", target:"_blank", className:"footer-icon", children: { i:{ className:"fab fa-twitter"}} },
-                {href:"https://www.twitter.com", target:"_blank", className:"footer-icon", children: { i:{ className:"fab fa-squarespace"}} }
-            ]
-        }
-    };
+    const [navData, setNavData ]= useState();
+    const [componentState, setComponentState] = useState("Loading")
+
+    useEffect(() => {
+        Api("/FetchFooterData", "Get", {},{},2000)
+        .then(data => {
+            setNavData(data);
+            setComponentState("Loaded");
+
+        })
+        .catch(err => { throw err;  })
+        ;
+    }, []);
 
     return <footer className="section footer">
-        <Options options={navData.options} />
-        <Icons icons={navData.icons} />
+        <Loader 
+            width="100px"
+            height="100px"
+            className={`footer-loader ${componentState !== "Loading" && "fadeOut"}`}
+        />
+        {(componentState !== "Loading") &&
+            <>
+                <Options className="animate-fade" options={navData.options} />
+                <Icons className="animate-fade" icons={navData.icons} />
+            </>
+        }
         <P className="copyright">
-            copyright &copy; Backroads travel tours company <Span id="date"></Span> all rights reserved
+            copyright &copy; Backroads travel tours company <Span id="date"></Span> all rights reserved 
         </P>
     </footer>
 };

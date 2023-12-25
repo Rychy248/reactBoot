@@ -17,12 +17,19 @@ function OptionsIcons({ options, icons }) {
  * @param {{ulData:{props}, items:[{href:href, className, children:{textInner:""}}] }} options Items to render inside the funtion
  * @returns 
  */
-function Options({ options }) {
+function Options({ options, className}) {
+    const classNameUnifed = `${options.ulData.className} ${className}`;
     return (
-        <Ul { ...options.ulData }>
-            {options.items.map((item, index) => (
+        <Ul { ...options.ulData } className={classNameUnifed} >
+            {options.items.map(({href, className, target, children:{textInner} }, index) => (
                 <Li key={index} >
-                    <A href={item.href} className={item.className} reef={(item.target === "_blank" ? "noreferrer":"")}> {item.children.textInner} </A>
+                    <A
+                        href={href}
+                        className={className}
+                        reef={(target === "_blank" ? "noreferrer":"")}
+                    >
+                        {textInner}
+                    </A>
                 </Li>
             ))}
         </Ul>
@@ -33,14 +40,22 @@ function Options({ options }) {
  * @param {{ ulData:{ className:""}, items:[{ href:, target:, className:, children:{i:{ className:, } }}... {} ] }} icons 
  * @returns 
  */
-function Icons({ icons }) {
+function Icons({ icons, className }) {
+    const classNameUnifed = `${icons.ulData.className} ${className}`;
     return (
-        <Ul { ...icons.ulData}>
-            {icons.items.map((item, index)=> <Li key={index}>
-                <A className={item.className} href={item.href} target={item.target} reef={(item.target === "_blank" ? "noreferrer":"")} >
-                    <I className={ item.children.i.className } />
-                </A>
-            </Li>)}    
+        <Ul { ...icons.ulData} className={classNameUnifed}>
+            {icons.items.map(( {className, href, target, children:{i}}, index )=> (
+                <Li key={index}>
+                    <A
+                        className={className}
+                        href={href}
+                        target={target}
+                        reef={(target === "_blank" ? "noreferrer":"")}
+                    >
+                        <I className={i.className } />
+                    </A>
+                </Li>
+            ))}    
         </Ul>
     );
 };

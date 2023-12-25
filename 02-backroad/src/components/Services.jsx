@@ -1,3 +1,4 @@
+// local imports
 import Article from "./tagsComponents/Article"
 import Div from "./tagsComponents/Div"
 import H from "./tagsComponents/H"
@@ -5,20 +6,17 @@ import I from "./tagsComponents/I"
 import Section from "./tagsComponents/Section"
 import Span from "./tagsComponents/Span"
 
-import ParaphsGenerator from "./componentsTools/ParaphsGenerator"
+import { ParaphsGenerator, SectionTitle } from "./componentsTools"
 
-export default function Services({ }) {
+export default function Services() {
     const services = [
         { icon:"fas fa-wallet fa-fw" },
         { icon:"fas fa-tree fa-fw" },
         { icon:"fas fa-socks fa-fw", },
     ]
     return <Section className="section services" id="services">
-        <Div className="section-title">
-            <H level={2}>our <Span>services</Span></H>
-        </Div>
+        <SectionTitle title="Ours" subtitle="services" />
         <Div className="section-center services-center">
-
             {services.map((service,index)=>{
                 return <Article className="service" key={index}>
                     <Span className="service-icon"><I className={service.icon}></I></Span>
@@ -28,7 +26,6 @@ export default function Services({ }) {
                     </Div>
                 </Article>
             })}
-
         </Div>
     </Section>
 };
