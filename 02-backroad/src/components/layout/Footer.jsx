@@ -6,7 +6,7 @@ import { Api, Loader } from "../componentsTools";
 import { P, Span } from "../tagsComponents/index"
 import { Options, Icons } from "./tools/LinksIcons";
 
-function Footer({ }) {
+function Footer() {
     const [navData, setNavData ]= useState();
     const [componentState, setComponentState] = useState("Loading")
 
@@ -34,7 +34,7 @@ function Footer({ }) {
             </>
         }
         <P className="copyright">
-            copyright &copy; Backroads travel tours company <Span id="date"></Span> all rights reserved 
+            copyright &copy; {new Date().getFullYear()} Backroads travel tours company <Span id="date"></Span> all rights reserved 
         </P>
     </footer>
 };
