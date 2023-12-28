@@ -1,0 +1,82 @@
+/*Sí, el primer ejemplo (class > tag) se refiere a un estilo del hijo directo. 
+Aquí hay algunas notaciones más comunes que puedes encontrar en CSS:*/
+
+/* ---------------- */
+/* Descendiente (element element): */
+div p {
+  color: blue;
+}
+/* Selecciona todos los elementos <p> que son descendientes (independientemente de la profundidad)
+de un elemento <div>.*/
+
+/* ---------------- */
+/* Hijo directo (element > element): */
+div > p {
+  color: red;
+}
+/* Selecciona todos los elementos <p> que son hijos directos de un elemento <div>. */
+
+/* ---------------- */
+/* Hermano general (element ~ element): */
+h2 ~ p {
+  font-weight: bold;
+}
+/* Selecciona todos los párrafos <p> que son hermanos (tienen el mismo padre) de
+un título de segundo nivel <h2>. */
+
+/* ---------------- */
+/* Hermano adyacente (element + element): */
+h2 + p {
+  font-style: italic;
+}
+/* Selecciona el primer párrafo <p> que es un hermano adyacente de un título de segundo nivel <h2>. */
+
+/* ---------------- */
+/* Agrupación de selectores (selector, selector): */
+h1, h2, h3 {
+  color: green;
+}
+
+/* ---------------- */
+/* Selector de clase (.clase): */
+.destacado {
+  background-color: yellow;
+}
+/* Aplica el estilo a todos los elementos con la clase .destacado. */
+
+/* ---------------- */
+/* Selector de ID (#id): */
+#encabezado {
+  font-size: 24px;
+}
+/* Aplica el estilo al elemento con el ID encabezado. */
+
+/* ---------------- */
+/* Pseudo-clases (:pseudo-clase): */
+a:hover {
+  color: purple;
+}
+/* Aplica el estilo a un enlace cuando el usuario pasa el ratón sobre él. */
+
+/* ---------------- */
+/* Pseudo-elementos (::pseudo-elemento): */
+
+css
+Copy code
+p::first-line {
+  font-weight: bold;
+}
+/* Aplica el estilo a la primera línea de cada párrafo. */
+
+/* Estas son solo algunas de las notaciones y técnicas más comunes en CSS.  */
+
+
+
+
+/* La especificidad se calcula asignando un valor numérico a cada selector
+en un conjunto de reglas CSS. Se utilizan cuatro componentes para calcular la especificidad:
+
+------------Número de IDs: Cada ID en los selectores suma 100 puntos.
+------------Número de clases, atributos y pseudoclases: Cada clase, atributo o pseudoclase suma 10 puntos.
+------------Número de elementos y pseudoelementos: Cada elemento o pseudoelemento suma 1 punto. 
+*/
