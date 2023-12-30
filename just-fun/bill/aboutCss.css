@@ -1,3 +1,9 @@
+
+/*
+
+CURSO BIEN INTERESANTE: https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#definir-filas-y-columnas */
+
+
 /*Sí, el primer ejemplo (class > tag) se refiere a un estilo del hijo directo. 
 Aquí hay algunas notaciones más comunes que puedes encontrar en CSS:*/
 
@@ -61,8 +67,6 @@ a:hover {
 /* ---------------- */
 /* Pseudo-elementos (::pseudo-elemento): */
 
-css
-Copy code
 p::first-line {
   font-weight: bold;
 }
