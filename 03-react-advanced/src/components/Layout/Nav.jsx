@@ -3,8 +3,12 @@ import { useEffect, useState } from "react";
 // third Modules
 import {Loader} from "../componentsTools";
 
+// localmodules
 import { Icons, NavLinks } from "./tools/LinksIcons"
 
+// static
+// import "./Nav.css"
+import logo from "./../../assets/react.svg"
 export default function Navbar({ links }) {
   const [componentState, SetComponentState] = useState(true);
 
@@ -12,7 +16,7 @@ export default function Navbar({ links }) {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <img src={"logo"} className="nav-logo" alt="backroads" />
+          <img src={logo} className="nav-logo logo react" alt="backroads" />
           <button type="button" className={"nav-toggle"} id={"nav-toggle"}>
             <i className="fas fa-bars"></i>
           </button>
@@ -23,7 +27,7 @@ export default function Navbar({ links }) {
             {/* <Icons className="animate-fade" icons={navData.icons} /> */}
           </>
         }
-        <loader className={`nav-loader ${componentState !== "Loading" && "fadeOut"}`} />
+        <Loader className={`nav-loader ${componentState !== "Loading" && "fadeOut"}`} />
       </div>
     </nav>
   );

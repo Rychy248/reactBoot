@@ -11,8 +11,6 @@ function SingleLink({ children, linkTitle }) {
 
 function SubLinks({ children, linksList = [] }) {
   const linksAreOverThan0 = linksList.length > 0;
-  console.log("LinksList: ", linksList, "List lenth", linksAreOverThan0);
-
   return (
     linksAreOverThan0 && (
       <ul>
@@ -31,7 +29,6 @@ function SubLinks({ children, linksList = [] }) {
 }
 
 function PrincipalLink({ links, title }) {
-  console.log("links; ", links, " title: ", title);
   return (
     <SingleLink linkTitle={title}>
       <SubLinks linksList={links} />
@@ -46,11 +43,11 @@ function PrincipalLink({ links, title }) {
 function NavLinks({ links }) {
   const keys = Object.keys(links);
   return (
-    <lu>
+    <ul>
       {keys.map((key, index) => (
         <PrincipalLink key={index} title={key} links={links[key]} />
       ))}
-    </lu>
+    </ul>
   );
 }
 

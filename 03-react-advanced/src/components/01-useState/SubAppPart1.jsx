@@ -1,7 +1,6 @@
 import {ErrorExample, RigthExample}  from "./01-error-example"
 
 function SubAppPart1({ ids }) {
-  console.log(ids)
   return (
     <>
       <ErrorExample id={ids[0][0]} />
