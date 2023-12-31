@@ -5,29 +5,30 @@ import Navbar from './components/Layout/Nav'
 
 function App() {
   const ids = {
-    "r01-useState":[
-      [
-        "r01-error-example-1",
-        "r01-error-example-2"
-      ]
+    "m01-useState":[
+      "s01-error-example",
+      "s02-useState-basics",
+      "s03-useState-array",
+      "s04-useState-object",
+      "s05-useState-gotcha",
     ],
-    "r02-useEffect":[],
-    "r03-conditional-rendering":[],
-    "r04-project-structure":[],
-    "r05-leverage-js":[],
-    "r06-forms":[],
-    "r07-useRef":[],
-    "r08-custom-hooks":[],
-    "r09-context-api":[],
-    "r10-useReducer":[],
-    "r11-performance":[],
+    "m02-useEffect":[],
+    "m03-conditional-rendering":[],
+    "m04-project-structure":[],
+    "m05-leverage-js":[],
+    "m06-forms":[],
+    "m07-useRef":[],
+    "m08-custom-hooks":[],
+    "m09-context-api":[],
+    "m10-useReducer":[],
+    "m11-performance":[],
   };
 
   return (
     <>
       <Navbar links={ids}/>
       <Counter />
-      <SubAppPart1 ids={ids["r01-useState"]} />
+      <SubAppPart1 ids={ids["m01-useState"]} />
     </>
   )
 }
