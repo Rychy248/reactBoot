@@ -88,3 +88,68 @@
   from{bottom:-50px; opacity:0 } 
   to{bottom:-0px; opacity:1 }
 }
+.animate-fade-in-out {
+  z-index: 2;
+  height: 0px;
+  position: relative;
+  visibility: hidden;
+  -webkit-animation-name: animatefadeInOut;
+  -webkit-animation-duration: 3s;
+  animation-name: animatefadeInOut;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes animatefadeInOut {
+  0%{
+    bottom:-50px;
+    opacity:0;
+    height: 0px;
+    visibility:visible;
+  }
+  10%{
+    height: auto;
+    bottom:-0px;
+    opacity:1;
+  }
+  70%{
+    bottom:-0px;
+    opacity:1;
+  }
+  90%{
+    height: auto;
+  }
+  100%{
+    bottom:-50px;
+    opacity:0;
+    height: 0px;
+    visibility: hidden;
+  }
+}
+
+@keyframes animatefadeInOut {
+  0%{
+    bottom:-50px;
+    opacity:0;
+    height: 0px;
+    visibility:visible;
+  }
+  10%{
+    height: auto;
+    bottom:-0px;
+    opacity:1;
+  }
+  70%{
+    bottom:-0px;
+    opacity:1;
+  }
+  90%{
+    height: auto;
+  }
+  100%{
+    bottom:-50px;
+    opacity:0;
+    height: 0px;
+    visibility: hidden;
+  }
+}
