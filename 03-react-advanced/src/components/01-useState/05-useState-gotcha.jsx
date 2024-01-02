@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 // local modules
 import { WhiteContainer } from "../Containers";
-import Final from "./final/05-useState-gotcha"
 
 function UseStateGotcha({ id }) {
   /*
