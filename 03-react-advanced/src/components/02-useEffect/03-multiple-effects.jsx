@@ -5,7 +5,12 @@ import { BlackContainer } from '../Containers';
 function MultipleEffects({ id }) {
   const [value, setValue] = useState(0);
   const [secondValue, setSecondValue] = useState(0);
+  const [consoleLogsActive, setConsoleLogsActive] = useState(true);
 
+  const print = (...msg) =>{
+    if (consoleLogsActive) console.log(...msg);
+  };
+  print("Hello","world")
   // useEffect(() => {
   //   console.log('hello from first useEffect');
   // }, []);
