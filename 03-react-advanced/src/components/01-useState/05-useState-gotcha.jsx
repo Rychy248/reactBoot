@@ -15,7 +15,7 @@ function UseStateGotcha({ id }) {
   const [incrementerPressCounter, setIncrementerPressCounter] = useState(0);
   const [componentState, setComponentState] = useState("Loading");
  
-  console.log("--------- part1, 05 useState-gotcha");
+  // console.log("--------- part1, 05 useState-gotcha");
   useEffect(()=>{ setComponentState("Loaded"); },[]); // update the component state,whe it's full loaded
 
   function counterUpdater(idCounter) {

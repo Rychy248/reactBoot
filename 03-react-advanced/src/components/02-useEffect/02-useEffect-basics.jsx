@@ -8,7 +8,8 @@ function UseEffectBasics({ id }) {
   const [consoleLogsActive, setConsoleLogsActive] = useState(false);
 
   //Use effect, take 2 parameters:
-  //------------------------------ The first a callback, where can't return a promise
+  //------------------------------ The first a callback, where can't return a promis
+  // useEffect(async () => { }, []); //This is invalid, because the callback is async
   //------------------------------ The second is the dependence, who can an array, if it's empty, this use Effect will be render just in the initial-render, its mean one time
   
   useEffect(()=>{
