@@ -13,7 +13,7 @@ import logo from "./../../assets/react.svg"
 export default function Navbar({ links }) {
   const [componentState, SetComponentState] = useState(true);
   const checkBoxRef = useRef(null);
-
+  
   function onLinkClick(e) { checkBoxRef.current.checked = false; };
 
   return (

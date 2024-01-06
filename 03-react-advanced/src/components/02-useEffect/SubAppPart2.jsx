@@ -11,13 +11,14 @@ import CleanupFunction  from "./05-cleanup-function"
  * @returns 
  */
 function SubAppPart2({ ids }) {
+  const arrayIds = ids[Object.keys(ids)[0]];
   return (
     <>
-      <CodeExample id={ids[0]} /> {/* black */}
-      <UseEffectBasics id={ids[1]} /> {/* white */}
-      <MultipleEffects id={ids[2]} /> {/* black */}
-      <FetchData id={ids[3]} /> {/* white */}
-      <CleanupFunction id={ids[4]} /> {/* black */}
+      <CodeExample id={arrayIds[0]} /> {/* black */}
+      <UseEffectBasics id={arrayIds[1]} /> {/* white */}
+      <MultipleEffects id={arrayIds[2]} /> {/* black */}
+      <FetchData id={arrayIds[3]} /> {/* white */}
+      <CleanupFunction id={arrayIds[4]} /> {/* black */}
     </>
   )
 }

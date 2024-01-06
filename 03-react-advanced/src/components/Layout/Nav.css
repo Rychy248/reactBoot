@@ -32,22 +32,6 @@ body {
   display: flex;
 }
 
-.navbar .nav-container li {
-  list-style: none;
-}
-
-.navbar .nav-container a {
-  text-decoration: none;
-  color: #0e2431;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 0.7rem;
-}
-
-.navbar .nav-container a:hover{
-    font-weight: bolder;
-}
-
 .nav-container {
   display: block;
   position: relative;
@@ -116,11 +100,6 @@ body {
   text-align: center;
 }
 
-.navbar .menu-items li {
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
 .logo h1{
   font-size: 3rem;
 }
@@ -205,4 +184,36 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav-link, .nav-link-principal{ /*.navbar .nav-container a*/
+  text-decoration: none;
+  color: #0e2431;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.nav-link:hover, .nav-link-principal:hover{ /*.navbar .nav-container a:hover{*/
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.nav-links-container{
+  text-align: start;
+}
+.nav-links-container li{
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.nav-link-principal{
+  letter-spacing: 1rem;
+  padding-left: 0;
+  text-decoration: underline;
+}
+
+.nav-link{
+  letter-spacing: 0;
+  text-decoration:none;
+  margin-left: 5%;
+
 }

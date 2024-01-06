@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { WhiteContainer } from "../Containers";
+import { BlackContainer } from "../Containers";
 
 /**
  * This is an incorrect componente, where useState is not used, and re-rendering dont apper
@@ -17,7 +17,7 @@ function ErrorExample({ id }){
   const handleClick = event => {count+=1; consolePrinter(count)};
 
   return(
-    <WhiteContainer specialTitle="Part 1, error state" idTitle={id}>
+    <BlackContainer specialTitle="Part 1, error state" idTitle={id}>
       <h2>useState error example</h2>
       
       <div>
@@ -28,7 +28,7 @@ function ErrorExample({ id }){
 
       <h1>Counter: {count}</h1>
       <button onClick={handleClick}>{" "}+{" "}</button>
-    </WhiteContainer>
+    </BlackContainer>
   );
 };
 

@@ -1,7 +1,7 @@
 // third modules
 import { useState, useEffect } from "react";
 // local modules
-import { WhiteContainer } from "../Containers";
+import { BlackContainer } from "../Containers";
 
 function UseStateGotcha({ id }) {
   /*
@@ -16,7 +16,7 @@ function UseStateGotcha({ id }) {
   const [componentState, setComponentState] = useState("Loading");
   const [consoleLogsActive, setConsoleLogsActive] = useState(false);
  
-  // console.log("--------- part1, 05 useState-gotcha");
+  printLine("--------- part1, 05 useState-gotcha");
   useEffect(()=>{ setComponentState("Loaded"); },[]); // update the component state,whe it's full loaded
 
   function printLine(...props) {
@@ -65,7 +65,7 @@ function UseStateGotcha({ id }) {
   
 
   return(
-    <WhiteContainer specialTitle={"Part 1, useState Gotcha"} id={id}>
+    <BlackContainer specialTitle={"Part 1, useState Gotcha"} id={id}>
       <h2>useState "gotcha"</h2>
       <div>
         <input
@@ -85,7 +85,7 @@ function UseStateGotcha({ id }) {
       {/* animate-fade-in-out, its a class to show momentanealy the componente */}
       {(componentState === "Loading") && <h2 className="animate-fade">Waiting...</h2>}
       
-    </WhiteContainer>
+    </BlackContainer>
   );
 };
 

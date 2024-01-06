@@ -10,7 +10,7 @@ function __containerCreator({children, className:enrichClass, specialTitle=false
   );
 };
 
-const BlackContainer = props => __containerCreator(props, "container-black");
-const WhiteContainer = props => __containerCreator(props, "container-white");
+const BlackContainer = props => __containerCreator({...props, className:"container-black"});
+const WhiteContainer = props => __containerCreator({...props, className:"container-white"});
 
 export {BlackContainer, WhiteContainer};

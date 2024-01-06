@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 // data fetch
 import { data as dataImported, people } from "../data.js";
 // local import
-import { WhiteContainer } from "../Containers";
+import { BlackContainer } from "../Containers";
 
 /**
  * 
@@ -56,7 +56,7 @@ function UseStateArray({ id }){
 
 
   return(
-    <WhiteContainer specialTitle={"Part 1, useState array"} id={id}>
+    <BlackContainer specialTitle={"Part 1, useState array"} id={id}>
       <h2>useState array example</h2>
       <ul>
         { data.map((item, index)=>{
@@ -66,7 +66,7 @@ function UseStateArray({ id }){
       <button onClick={clearData}>Clear all list</button>
       <input id="useStateArray-part1-03-input-name-add" type="text" value={nameAdd} onChange={handler} />
       <button onClick={addNametoList}>Add name</button>
-    </WhiteContainer>
+    </BlackContainer>
     );
 };
 

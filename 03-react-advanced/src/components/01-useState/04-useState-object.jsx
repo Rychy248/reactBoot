@@ -1,7 +1,7 @@
 // third modules
 import { useState } from 'react';
 // local modules
-import { BlackContainer } from '../Containers';
+import { WhiteContainer } from '../Containers';
 
 function UseStateObject({ id }) {
   const Person = { name:"", age:0, hobby:"" };
@@ -19,7 +19,7 @@ function UseStateObject({ id }) {
   };
 
   return(
-    <BlackContainer specialTitle={"Part 1, UseState object"} id={id}>
+    <WhiteContainer specialTitle={"Part 1, UseState object"} id={id}>
       <h2>useState object example</h2>
       <h3>Person{person.name.length > 0 && ` "${person.name}"`}</h3>
       <p>{person.name} Details:</p>
@@ -31,7 +31,7 @@ function UseStateObject({ id }) {
       <input id='useState04-object-age' type='number' value={secondPerson.age} onChange={changeHandler}></input>
       <input id='useState04-object-hobby' type='text' value={secondPerson.hobby} onChange={changeHandler}></input>
       <button onClick={changePeople}>Change person</button>
-    </BlackContainer>
+    </WhiteContainer>
   );
 };
 

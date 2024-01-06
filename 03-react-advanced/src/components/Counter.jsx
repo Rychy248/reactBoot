@@ -2,7 +2,7 @@ import './counter.css'
 import { useState, useRef } from 'react'
 import { BlackContainer } from './Containers';
 
-function Counter() {
+function Counter({ ids }) {
   const inputRef = useRef(null);
   const [count, setCount] = useState(0);
   const [increment, setIncrement] = useState(true);

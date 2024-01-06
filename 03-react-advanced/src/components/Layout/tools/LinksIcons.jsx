@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import LinkClickContext from "./LinkClickContext";
 
-function SingleLink({ children, linkTitle }) {
+function SingleLink({ children, linkTitle, className="nav-link" }) {
   const onClick = useContext(LinkClickContext);
   return (
     <li>
-      <a href={`#${linkTitle}`} className="nav-link" onClick={onClick}>
+      <a href={`#${linkTitle}`} className={className} onClick={onClick}>
         {`#${linkTitle}`}
       </a>
       {children}
@@ -34,7 +34,7 @@ function SubLinks({ children, linksList = [] }) {
 
 function PrincipalLink({ links, title, }) {
   return (
-    <SingleLink linkTitle={title} >
+    <SingleLink linkTitle={title} className="nav-link-principal" >
       <SubLinks linksList={links} />
     </SingleLink>
   );
@@ -47,7 +47,7 @@ function PrincipalLink({ links, title, }) {
 function NavLinks({ links }) {
   const keys = Object.keys(links);
   return (
-    <ul className="nav-links">
+    <ul className="nav-links-container">
       {keys.map((key, index) => (
         <PrincipalLink key={index} title={key} links={links[key]} />
       ))}

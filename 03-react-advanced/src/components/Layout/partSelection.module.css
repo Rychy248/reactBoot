@@ -1,0 +1,32 @@
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
+.container{
+  margin: 1rem auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+  grid-template-rows: auto;
+  gap: 0.5rem;
+  place-items: stretch; /*This is short for justify-items and aling items*/
+  justify-content: center; /*similar to justify-item, but this is for the container*/
+  align-content: center; /*Similar to aling-items, but this is for the container*/
+}
+.item-part{
+  display: block;
+  border-radius: 15px;
+  padding: 0.5rem;
+  box-shadow: 1px 5px 10px 2px rgba(44, 45, 45, 0.409);
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.item-title{
+  font-size: 1rem;
+  margin: 0;
+}
+.item-part:hover{
+  color: rgb(242, 89, 0);
+  cursor: pointer;
+  text-shadow: 1px 5px 40px #7e1bff;
+}

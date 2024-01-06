@@ -10,13 +10,14 @@ import UseStateGotcha from "./05-useState-gotcha"
  * @returns 
  */
 function SubAppPart1({ ids }) {
+  const arrayIds = ids[Object.keys(ids)[0]];
   return (
     <>
-      <ErrorExample id={ids[0]} /> {/* white */}
-      <UseStateBasics id={ids[1]} /> {/* black */}
-      <UseStateArray id={ids[2]} /> {/* white */}
-      <UseStateObject id={ids[3]} /> {/* black */}
-      <UseStateGotcha id={ids[4]} /> {/* white */}
+      <ErrorExample id={arrayIds[0]} /> {/* black */}
+      <UseStateBasics id={arrayIds[1]} /> {/* white */}
+      <UseStateArray id={arrayIds[2]} /> {/*black */}
+      <UseStateObject id={arrayIds[3]} /> {/* white */}
+      <UseStateGotcha id={arrayIds[4]} /> {/*black */}
     </>
   )
 }

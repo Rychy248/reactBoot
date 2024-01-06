@@ -1,4 +1,4 @@
-import { BlackContainer } from "../Containers";
+import { WhiteContainer } from "../Containers";
 import { useState, useEffect } from "react";
 
 /**
@@ -47,7 +47,7 @@ function UseStateBasics({ id }){
   }, []);
 
   return(
-    <BlackContainer specialTitle="Part 1, useStateBasics" idTitle={id}>
+    <WhiteContainer specialTitle="Part 1, useStateBasics" idTitle={id}>
       <br/>
       <h2>useState error example, rigth use</h2>
       <h4>
@@ -60,7 +60,7 @@ function UseStateBasics({ id }){
       <input id="other-title" type='text' value={otherTitle} onChange={handleInput}></input>
       <h1>Counter: {count}</h1>
       <button onClick={handleClick}>{" "}+{" "}</button>
-    </BlackContainer>
+    </WhiteContainer>
   );
 };
 
