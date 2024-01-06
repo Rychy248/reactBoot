@@ -14,9 +14,14 @@ function UseStateGotcha({ id }) {
   const [counter2, setCounter2] = useState(0);
   const [incrementerPressCounter, setIncrementerPressCounter] = useState(0);
   const [componentState, setComponentState] = useState("Loading");
+  const [consoleLogsActive, setConsoleLogsActive] = useState(false);
  
   // console.log("--------- part1, 05 useState-gotcha");
   useEffect(()=>{ setComponentState("Loaded"); },[]); // update the component state,whe it's full loaded
+
+  function printLine(...props) {
+    if(consoleLogsActive) console.log(...props);
+  };
 
   function counterUpdater(idCounter) {
     setIncrementerPressCounter(prevState =>{
@@ -24,10 +29,21 @@ function UseStateGotcha({ id }) {
       return prevState -1
     });
 
-    idCounter === "counter"
-      ? setCounter(latestCounter => (latestCounter + 1)) /*lateste value*/
-      : setCounter2(counter2 + 1) /*is not the latest value*/
-    ;
+    switch (idCounter) {
+      case "counter":
+        /*lateste value*/
+        setCounter(latestCounter => (latestCounter + 1));
+        printLine("COUNTER1 VALUE: ",counter);
+        break;
+      case "counter2":
+        /*is not the latest value*/
+        setCounter2(counter2 + 1);
+        printLine("COUNTER2 VALUE: ",counter2);
+        break;
+    
+      default:
+        break;
+    }
 
   };
   
@@ -51,9 +67,18 @@ function UseStateGotcha({ id }) {
   return(
     <WhiteContainer specialTitle={"Part 1, useState Gotcha"} id={id}>
       <h2>useState "gotcha"</h2>
-      <h6>Look at the console</h6>
+      <div>
+        <input
+          type="checkbox"
+          checked={consoleLogsActive}
+          onChange={()=>{ setConsoleLogsActive(prevState => !prevState) }}
+        />
+        <label>Console logs <b>{ consoleLogsActive? "on":"off" }</b></label>
+      </div>
+      {consoleLogsActive && <h6 className="animate-fade">Look at the console</h6> }
+      
       <h1>Counter: {counter}, Counter2: {counter2}</h1>
-  
+
       <button id="part1-useState-gotcha-counter" onClick={incrementer} >Increse counter</button>
       <button id="part1-useState-gotcha-counter2" onClick={incrementer} >Increse counter2</button>
   
