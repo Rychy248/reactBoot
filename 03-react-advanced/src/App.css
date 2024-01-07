@@ -3,7 +3,11 @@
   https://lenguajecss.com/css/maquetacion-y-colocacion/grid-css/#definir-filas-y-columnas
 
  */
-
+hr{
+  width: 70%;
+  border: 0;
+  border-bottom: 1px dashed #b6b6b6
+}
 #root{
   margin: 0;
   padding: 0;
@@ -151,4 +155,31 @@
     height: 0px;
     visibility: hidden;
   }
+}
+
+
+
+
+/* FADE  */
+.loading-messegue {
+  position: relative;
+  -webkit-animation-name: loadingMesegue;
+  -webkit-animation-duration: 1s;
+  animation-name: loadingMesegue;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* animation: logo-spin 6s linear infinite; */
+}
+
+@-webkit-keyframes loadingMesegue {
+  0%{ opacity:1; }
+  20%{ opacity:0; }
+  100%{ opacity:1; }
+}
+
+@keyframes loadingMesegue {
+  0%{ opacity:1; }
+  50%{ opacity:0; }
+  100%{ opacity:1; }
 }

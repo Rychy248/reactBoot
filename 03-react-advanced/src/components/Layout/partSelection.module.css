@@ -1,7 +1,7 @@
 /* https://css-tricks.com/snippets/css/complete-guide-grid/ */
 
 .container{
-  margin: 1rem auto;
+  margin:0 auto 1rem auto;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
@@ -29,4 +29,12 @@
   color: rgb(242, 89, 0);
   cursor: pointer;
   text-shadow: 1px 5px 40px #7e1bff;
+}
+.part-selected{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.part-selected span{
+  color: rgb(242, 89, 0);
 }

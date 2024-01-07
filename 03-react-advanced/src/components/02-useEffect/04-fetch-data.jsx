@@ -75,3 +75,4 @@ function FetchData({ id }) {
 };
 
 export default FetchData;
+export { SingleUserRender };
