@@ -2,8 +2,16 @@
 function SingleCheckBox({ checkLabel, check , setCheck }) {
   return (
     <div>
-      <input type="checkbox" checked={check} onChange={ ()=> setCheck(prev => !prev) } />
-      <label>{checkLabel}</label>
+      <input 
+        id={`${checkLabel.replace(" ","-")}-checkbox`}
+        name={`${checkLabel.replace(" ","-")}-checkbox`}
+        type="checkbox"
+        checked={check}
+        onChange={ ()=> setCheck(prev => !prev) }
+      />
+      <label
+        htmlFor={`${checkLabel.replace(" ","-")}-checkbox`}
+      >{checkLabel}</label>
     </div>
   );
 }

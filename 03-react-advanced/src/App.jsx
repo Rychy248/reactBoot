@@ -11,9 +11,11 @@ import SubAppPart1 from './components/01-useState/SubAppPart1'
 import SubAppPart2 from './components/02-useEffect/SubAppPart2'
 import SubAppPart3 from './components/03-conditional-rendering/SubAppPart3';
 import SubAppPart4 from './components/04-project-structure/SubAppPart4';
+import SubAppPart5 from './components/05-leverage-javascript/SubAppPart5';
+import SubAppPart6 from './components/06-forms/SubAppPart6';
 
 function App() {
-  const [componentSelected, setComponentSelected] = useState("Part-4");
+  const [componentSelected, setComponentSelected] = useState("Part-6");
   const part1 = {"m01-useState":[
     "s01-error-example",
     "s02-useState-basics",
@@ -41,12 +43,23 @@ function App() {
   ]};
   
   const part4 = {"m04-project-structure":[
+    "s01-navbar",
+    "s02-first-Component",
+    "s03-second-Component",
+    "s04-about-Component",
+    "s05-home-Component",
   ]};
   
   const part5 = {"m05-leverage-js":[
+    "s01-Person"
   ]};
   
   const part6 = {"m06-forms":[
+    "s01-controlled-inputs",
+    "s02-user-challenge.",
+    "s03-multiple-inputs.",
+    "s04-other-inputs.",
+    "s05-05-form-data.",
   ]};
   
   const part7 = {"m07-useRef":[
@@ -69,8 +82,8 @@ function App() {
     "Part-2":{ ids:{...part2}, component:SubAppPart2},
     "Part-3":{ ids:{...part3}, component:SubAppPart3},
     "Part-4":{ ids:{...part4}, component:SubAppPart4},
-    "Part-5":{ ids:{...part5}, component:NoComponent},
-    "Part-6":{ ids:{...part6}, component:NoComponent},
+    "Part-5":{ ids:{...part5}, component:SubAppPart5},
+    "Part-6":{ ids:{...part6}, component:SubAppPart6},
     "Part-7":{ ids:{...part7}, component:NoComponent},
     "Part-8":{ ids:{...part8}, component:NoComponent},
     "Part-9":{ ids:{...part9}, component:NoComponent},
@@ -102,14 +115,11 @@ function App() {
         componentSelected={componentSelected}
         setComponentSelected={setComponentSelected}
       />
-      {/* 
-        <Counter />
-        <SubAppPart1 ids={ids["m01-useState"]} />
-        <SubAppPart2 ids={ids["m02-useEffect"]} />
-      */}
+      
       {React.createElement(options[componentSelected].component, {
         ids: options[componentSelected].ids,
       })}
+
     </>
   );
 }

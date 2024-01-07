@@ -1,18 +1,25 @@
 
-// import MultipleReturnsBasics  from "./01-multiple-returns-basics"
+
+import { BlackContainer } from "../Containers";
+import Navbar from "./Navbar/Navbar";
+import Example from "./Example";
+import { About, Home} from "./Pages";
+
 /**
  * 
  * @param {[]} ids ids for all titles of componets excercices
  * @returns 
  */
-function SubAppPart4({ ids }) {
+function  SubAppPart4({ ids }) {
+
   const arrayIds = ids[Object.keys(ids)[0]];
+
   return (
     <>
-      {/* <MultipleReturnsBasics id={arrayIds[0]} /> black */}
-      <h3 style={{ margin:"auto", textAlign:"center", fontSize:"500%"}}>
-        CONSTRUCT THE APP HERE
-      </h3>
+      <Navbar id={arrayIds[0]} />
+      <Example id1={arrayIds[1]} id2={arrayIds[2]} />
+      <About id={arrayIds[3]}/>
+      <Home id={arrayIds[4]}/>
     </>
   )
 }

@@ -1,0 +1,21 @@
+.sub-navbar {
+  z-index: -1;
+  background: radial-gradient(#000, #5a2505, #000000);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  /* animation: radial-back 15s ease-in-out infinite; */
+}
+
+@keyframes radial-back {
+  0%, 100%{ z-index: -1; background: radial-gradient(#000); filter: hue-rotate(0deg); }
+  10%{ z-index: -1; background: radial-gradient(#2d2424, #782f02, #710404); }
+  20%{ z-index: -1; background: radial-gradient(#372929, #b1541a, #920505); }
+  30%{ z-index: -1; background: radial-gradient(#6f3333, #ff6b0f, #d60a0a); }
+  40%{ z-index: -1; background: radial-gradient(#a02626, #ff9350, #ff0000); }
+  50%{ z-index: -1; background: radial-gradient(#ff6d6d, #ffdc50, #ff8400); color: #000; }
+  60%{ z-index: -1; background: radial-gradient(#ff6d6d, #ffdc50, #ff8400); color: #000; }
+  70%{ z-index: -1; background: radial-gradient(#a02626, #ff9350, #ff0000); }
+  80%{ z-index: -1; background: radial-gradient(#6f3333, #ff6b0f, #d60a0a); }
+  90%{ z-index: -1; background: radial-gradient(#293337, #00ff59, #920505); filter: hue-rotate(360deg); }
+}
