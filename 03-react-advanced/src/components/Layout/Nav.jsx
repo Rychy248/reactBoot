@@ -20,7 +20,7 @@ export default function Navbar({ links }) {
     <LinkClickContext.Provider value={onLinkClick}>
       <nav>
         <div className="navbar">
-          <div className="container nav-container">
+          <div className="nav-container">
             <input className="checkbox" type="checkbox" ref={checkBoxRef} name="" id="" />
                 <div className="hamburger-lines">
                   <span className="line line1"></span>

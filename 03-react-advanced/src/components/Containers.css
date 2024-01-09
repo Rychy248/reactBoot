@@ -1,3 +1,97 @@
+:root {
+  /* colors */
+  --primary-100: #e2e0ff;
+  --primary-200: #c1beff;
+  --primary-300: #a29dff;
+  --primary-400: #837dff;
+  --primary-500: #645cff;
+  --primary-600: #504acc;
+  --primary-700: #3c3799;
+  --primary-800: #282566;
+  --primary-900: #141233;
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  /* rest of the colors */
+  --black-dark: #000;
+  --black-100: #100;
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* fonts  */
+
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+  /* rest of the vars */
+  --backgroundColorBlack: var(--grey-900);
+  --backgroundColorWhite: var(--grey-50);
+  --textColorBlack: var(--grey-50);
+  --textColorWhite: var(--grey-900);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+
+
+
+
+/*-------------------------------------------- BOTH CONTAINERs*/
+.container-black,
+.container-white{
+  padding: 1rem;
+}
+
+.container-black button, .container-black input,
+.container-white button, .container-white input{
+  border-radius: 8px;
+  padding: 0.4em;
+  margin: 0.2rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container-black button:hover,
+.container-white button:hover {
+  border-color: #7ec8fc;
+} 
+
+.container-white  button:focus, button:focus-visible,
+.container-black  button:focus, button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container-black button:disabled,
+.container-white button:disabled{
+  border-color: #f709216e;
+  color: aliceblue
+}
 
 /*-------------------------------------------- BLACK CONTAINER*/
 .container-black {
@@ -17,10 +111,26 @@
 .container-black button, .container-black input{
   color: #fff;
   background-color: #1a1a1a;
+  transition: #535bf2 0.25s;
+  border: 1px solid #0000007b;
 }
-.container-black * {
-  margin: 0.2rem;
+
+/*---------forms color, structure in index WHITE CONTAINER*/
+.container-black .form {
+  background: var(--grey-700);
+  border: 1px solid var(--grey-700);
 }
+
+.container-black .form-input,
+.container-black .form-textarea {
+  background: var(--backgroundColorBlack);
+  border: 1px solid var(--grey-500);
+}
+
+.container-black::placeholder {
+  color: var(--grey-500);
+}
+
 
 /*-------------------------------------------- WHITE CONTAINER*/
 .container-white {
@@ -40,9 +150,22 @@
 .container-white button, .container-white input{
   color: #000;
   background-color: #d1d1d1;
+  transition: #535bf2 0.25s;
+  border: 1px solid #9999997b;
 }
-.container-white * {
-  margin: 0.2rem;
+.container-white .form {
+  background: var(--grey-200);
+  border: 1px solid var(--grey-400);
+}
+
+.container-white .form-input,
+.container-white .form-textarea {
+  background: var(--backgroundColorWhite);
+  border: 1px solid var(--grey-900);
+}
+
+.container-white::placeholder {
+  color: var(--grey-300);
 }
 
 

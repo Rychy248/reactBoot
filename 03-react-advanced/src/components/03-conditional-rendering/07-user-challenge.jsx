@@ -47,7 +47,7 @@ function UserChallenge({ id }) {
 
       <h3>{user !== null ? "Login" : "Logout"} successful</h3>
 
-      <button className="btn" onClick={(user === null ? login : logout)} >
+      <button onClick={(user === null ? login : logout)} >
         {(user === null) ? "Login" : "Logout"}
       </button>
 
