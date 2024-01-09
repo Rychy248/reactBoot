@@ -25,9 +25,14 @@ function ControlledInputs({ id }) {
     }
   };
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(name, email);
+  }
+
   return(
     <BlackContainer specialTitle="Part 6 - Controlled Inputs" idTitle={id}>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h4>Controller inputs </h4>
 
         <InputRowMaker id={idMaker("name" )} displayContent="Name" type="text" required={true} value={name} onChange={handlerChange}/>
