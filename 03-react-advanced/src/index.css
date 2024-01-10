@@ -279,17 +279,18 @@ ul {
 .users {
   max-width: 90vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 3rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem auto;
 }
 .users li {
   width: 100%;
   display: flex;
   align-items: center;
   background: var(--white);
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: var(--borderRadius);
+  background-color: var(--primary-100);
   text-align: left;
 }
 .users img {

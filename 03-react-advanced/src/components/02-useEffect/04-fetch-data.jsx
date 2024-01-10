@@ -5,7 +5,10 @@ import "./css/04-fetchData.css";
 import avatar from "/vite.svg"
 // local modules
 import { WhiteContainer } from "../Containers";
-import fetchDataGithub from "./04FetchDataData";
+
+/// import fetchDataGithub from "./04FetchDataData";
+// replace by  03-react-advanced\src\components\componentsTools\Api.jsx
+// with the endpoint "/FetchDataFromGitUsers-part2-useEffect"
 
 function SingleUserRender({ avatarUrl=avatar, login="Hello", type="User" }) {
   return (

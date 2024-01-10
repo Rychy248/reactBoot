@@ -1,11 +1,11 @@
 
 import { useState, useEffect } from "react";
 
-import Api from "./tools/Api";
+// import Api from "./tools/Api"; //Replaced by the other API
+import { Api, Loader } from "../../componentsTools";
 import { BlackContainer } from "../../Containers";
 
 import Person from "./Person";
-import {Loader} from "../../componentsTools";
 
 import "../static/styles.css"
 
@@ -17,7 +17,7 @@ function ListPeople({ id }) {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    Api("http://some-url",signal)
+    Api("/FetchPeople-part5-components","Get",undefined,signal)
     .then((data)=>{
       setPeople(data);
       setComponentState("Loaded");

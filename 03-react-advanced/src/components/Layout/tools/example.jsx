@@ -7,6 +7,7 @@ const MyContextCombinaded = createContext();
 const MyProviderA = ({ children }) => {
   const [value, setValue] = useState('initialValue');
   const updateValue = (newValue) => { setValue(newValue); };
+
   return (
     <MyContextA.Provider value={{ value, updateValue }}>
       {children}
@@ -17,6 +18,7 @@ const MyProviderA = ({ children }) => {
 const MyProviderB = ({ children }) => {
   const [valueB, setValueB] = useState('initialValue');
   const updateValueB = (newValueB) => { setValueB(newValueB); };
+
   return (
     <MyContextB.Provider value={{ valueB, updateValueB }}>
       {children}
@@ -26,10 +28,10 @@ const MyProviderB = ({ children }) => {
 
 // Creamos un componente de proveedor combinado
 const CombinedProvider = ({ children }) => {
-  const { contextA } = useContext(MyContextA);
-  const { contextB } = useContext(MyContextB);
+  const contextA = useContext(MyContextA);
+  const contextB = useContext(MyContextB);
   // Proporcionamos ambos contextos en un solo objeto
-  const combinedContext = {
+  const MyCombinedContext = {
     contextA: useContext(MyContextA),
     contextB: useContext(MyContextB)
   };
@@ -37,7 +39,7 @@ const CombinedProvider = ({ children }) => {
   return (
     <MyProviderA>
       <MyContextB>
-        <MyContextCombinaded.Provider value={combinedContext}>
+        <MyContextCombinaded.Provider value={MyCombinedContext}>
           {children}
         </MyContextCombinaded.Provider>
       </MyContextB>
@@ -51,12 +53,12 @@ const MyComponent = () => {
   const { contextA } = useContext(MyContextA);
   const { contextB } = useContext(MyContextB);
   // o el contexto combinado
-  const { combinedContext } = useContext(combinedContext);
+  const { MyCombinedContext } = useContext(MyCombinedContext);
   return (
     <div>
       <p>Context A Value: {contextA.valueA}</p>
       <p>Context B Value: {contextB.valueB}</p>
-      <p>Context both: {combinedContext}</p>
+      <p>Context both: {MyCombinedContext}</p>
       <button onClick={() => contextA.updateValueA('New Value A')}>Update Context A</button>
       <button onClick={() => contextB.updateValueB('New Value B')}>Update Context B</button>
     </div>

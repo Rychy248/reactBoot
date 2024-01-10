@@ -604,10 +604,4 @@ const dataFromAPI = [
 ];
 
 
-export default async function fetchDataGithub () {
-  return new Promise((res, rej)=>{
-    setTimeout(() => {
-      res(dataFromAPI);
-    }, 1000);
-  })
-};
+export default dataFromAPI;
