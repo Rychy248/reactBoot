@@ -1,6 +1,6 @@
 import "./Loader.css";
 
-export default function Loader({ width="50px", height="50px", style={}, className="" }) {
+function Loader({ width="50px", height="50px", style={}, className="" }) {
   return <div
     className={`loader ${className}`}
     style={{
@@ -9,4 +9,6 @@ export default function Loader({ width="50px", height="50px", style={}, classNam
       ...style
     }}
   ></div>
-}
+};
+
+export default Loader;

@@ -1,7 +1,14 @@
+// third, modules
 import { useState, useEffect, useContext } from "react";
-import { WhiteContainer } from "../Containers";
-import { Api, Loader } from "../componentsTools";
+// local tools
+
+import { Api, Loader, SingleCheckBox } from "../tools";
+
 import { UserChallengeContext  } from "./useContextTools/subAppContext"
+// local components
+import InputRowMaker from "./tools/InputRowMaker";
+import { WhiteContainer } from "../Containers";
+
 
 function Person({ id, name }) {
   const { deleteUser } = useContext(UserChallengeContext);
@@ -25,6 +32,9 @@ function UserChallenge({ id }) {
   const [componentState, setComponentState ] = useState("Loading");
   const [people, setPeople ] = useState([]);
   const [newPerson, setNewPerson ] = useState("");
+  const [fetchApiData, setFetchApiData ] = useState(false);
+
+  const idMaker = (id) => `part6-2-user-challenge-${id}`; ;
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -32,23 +42,25 @@ function UserChallenge({ id }) {
     
     setComponentState("Loading");
 
-    Api("/FetchSinglePeople-part6-forms","Get",1000,signal)
-    .then(data => {
-      setPeople(data);
-      setComponentState("Loaded");
-    })
-    .catch(err => {
-      if(err.name === "AbortError"){
-        console.log("Fetch Aborted");
+    if(fetchApiData){
+      Api("/FetchSinglePeople-part6-forms","Get",1000,signal)
+      .then(data => {
+        setPeople(data);
         setComponentState("Loaded");
-      }else{
-        setComponentState("Error");
-      };
-    });
+      })
+      .catch(err => {
+        if(err.name === "AbortError"){
+          console.log("Fetch Aborted");
+          setComponentState("Loaded");
+        }else{
+          setComponentState("Error");
+        };
+      });
+    };
     
     return () => { abortController.abort(); };
 
-  }, []);
+  }, [fetchApiData]);
 
   function deleteUser(id ) {
     setPeople(prev => prev.filter(person => person.id !== id ) );
@@ -68,36 +80,43 @@ function UserChallenge({ id }) {
   return (
     <UserChallengeContext.Provider value={{ deleteUser:deleteUser}}>
       <WhiteContainer specialTitle="Part 6 - Controlled input" idTitle={id}>
-        
-        { (people.length > 0) && <button type='button' className='btn' onClick={()=> setPeople([])} > Clear All </button> }
+        {!fetchApiData
+        ? (
+          <SingleCheckBox 
+            checkLabel={"Fetch Api Data"}
+            check={fetchApiData}
+            setCheck={setFetchApiData}
+          />
+        ):(
+          <>
+            { (people.length > 0) && <button type='button' className='btn' onClick={()=> setPeople([])} > Clear All </button> }
 
-        <div>
-          {componentState === "Loading" && <Loader />}
-          {componentState === "Loaded" &&  <ListPersons people={people} />}
-          {componentState === "Error" && <h2>Error in fetch data</h2>}
-        </div>
-
-        <div>
-          <form className='form' onSubmit={handlerSubmit}>
-            <h4>Add User</h4>
-            <div className='form-row'>
-              <label htmlFor='name' className='form-label'>
-                name
-              </label>
-              <input 
-                type='text'
-                className='form-input'
-                id='part6-02-user-challenge-name'
-                required={true} value={newPerson} 
-                onChange={(e) => setNewPerson(e.target.value) }/>
+            <div>
+              {componentState === "Loading" && <Loader />}
+              {componentState === "Loaded" &&  <ListPersons people={people} />}
+              {componentState === "Error" && <h2>Error in fetch data</h2>}
             </div>
 
-            <button type='submit' className='btn btn-block'>
-              submit
-            </button>
-          </form>
-        </div>
+            <div>
+              <form className='form' onSubmit={handlerSubmit}>
+                <h4>Add User</h4>
+                
+                <InputRowMaker 
+                  id={idMaker("name")}
+                  displayContent="name"
+                  value={newPerson} 
+                  onChange={(e) => setNewPerson(e.target.value) }
+                  type='text'
+                  required={true}
+                />
 
+                <button type='submit' className='btn btn-block'>
+                  submit
+                </button>
+              </form>
+            </div>
+          </>
+        )}
       </WhiteContainer>
     </UserChallengeContext.Provider>
   );

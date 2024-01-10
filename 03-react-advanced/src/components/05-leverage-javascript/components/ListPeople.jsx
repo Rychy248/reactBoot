@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 // import Api from "./tools/Api"; //Replaced by the other API
-import { Api, Loader } from "../../componentsTools";
+import { Api, Loader } from "../../tools";
 import { BlackContainer } from "../../Containers";
 
 import Person from "./Person";

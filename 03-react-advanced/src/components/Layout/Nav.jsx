@@ -1,7 +1,7 @@
 // react imports
 import { useEffect, useState, useRef } from "react";
 // third Modules
-import {Loader} from "../componentsTools";
+import { Loader } from "../tools";
 
 // localmodules
 import { Icons, NavLinks } from "./tools/LinksIcons"
