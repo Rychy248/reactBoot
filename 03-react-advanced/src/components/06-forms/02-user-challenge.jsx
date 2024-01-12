@@ -2,11 +2,10 @@
 import { useState, useEffect, useContext } from "react";
 // local tools
 
-import { Api, Loader, SingleCheckBox } from "../tools";
+import { Api, Loader, SingleCheckBox, InputRowMaker } from "../tools";
 
 import { UserChallengeContext  } from "./useContextTools/subAppContext"
 // local components
-import InputRowMaker from "./tools/InputRowMaker";
 import { WhiteContainer } from "../Containers";
 
 

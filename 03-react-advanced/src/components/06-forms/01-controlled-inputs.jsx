@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BlackContainer } from "../Containers";
-import InputRowMaker from "./tools/InputRowMaker";
+import { InputRowMaker } from "../tools";
 
 /**
  * 

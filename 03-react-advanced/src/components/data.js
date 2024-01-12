@@ -21,3 +21,6 @@ export const people = [
   },
   { id: 4, name: 'david' },
 ];
+
+
+export const frameworks = ['react', 'angular', 'vue', 'svelte'];

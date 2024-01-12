@@ -1,4 +1,4 @@
-import { data as singlePeople, people } from "../data";
+import { data as singlePeople, people, frameworks } from "../data";
 
 /**
  * 
@@ -59,7 +59,13 @@ function SinglePeople(time =1000, signal=undefined) {
   });
 };
 
-
+function FetchFrameworks(time = 1000, signal=undefined) {
+    return Caller({
+      dataReturn:frameworks,
+      time,
+      signal
+    });
+};
 
 function Api(endpoint, method="Get", time=1000, signal=undefined, headers={}, body={} ) {
   const avaibleEndpoints = {
@@ -71,6 +77,9 @@ function Api(endpoint, method="Get", time=1000, signal=undefined, headers={}, bo
     },
     "/FetchSinglePeople-part6-forms":{
       Get:SinglePeople,
+    },
+    "/FetchFrameworks-part6-otherInputs":{
+      Get:FetchFrameworks,
     },
   };
   

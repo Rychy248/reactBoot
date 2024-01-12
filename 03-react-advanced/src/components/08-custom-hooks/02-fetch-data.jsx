@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+
+import { WhiteContainer } from '../Containers';
+
 const url = 'https://api.github.com/users/QuincyLarson';
 
-const FetchData = () => {
+function FetchData({ id }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [user, setUser] = useState(null);
@@ -39,16 +42,18 @@ const FetchData = () => {
   }
   const { avatar_url, name, company, bio } = user;
   return (
-    <div>
-      <img
-        style={{ width: '100px', borderRadius: '25px' }}
-        src={avatar_url}
-        alt={name}
-      />
-      <h2>{name}</h2>
-      <h4>works at {company}</h4>
-      <p>{bio}</p>
-    </div>
+    <WhiteContainer specialTitle="Part 8 Custom Hooks - Fetch Data" idTitle={ id } >
+      <div>
+        <img
+          style={{ width: '100px', borderRadius: '25px' }}
+          src={avatar_url}
+          alt={name}
+        />
+        <h2>{name}</h2>
+        <h4>works at {company}</h4>
+        <p>{bio}</p>
+      </div>
+    </WhiteContainer>
   );
 };
 export default FetchData;

@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 
 import './App.css'
+import { Navbar, PartSelection, NoComponent } from './components/Layout'
+import {
+  Counter,
+  SubAppPart1,
+  SubAppPart2,
+  SubAppPart3,
+  SubAppPart4,
+  SubAppPart5,
+  SubAppPart6,
+  SubAppPart7,
+  SubAppPart8
+} from './components';
 
-import Navbar from './components/Layout/Nav'
-import PartSelection from './components/Layout/PartSelection';
-import NoComponent from './components/Layout/tools/NoComponent';
 
-import Counter from './components/Counter'
-import SubAppPart1 from './components/01-useState/SubAppPart1'
-import SubAppPart2 from './components/02-useEffect/SubAppPart2'
-import SubAppPart3 from './components/03-conditional-rendering/SubAppPart3';
-import SubAppPart4 from './components/04-project-structure/SubAppPart4';
-import SubAppPart5 from './components/05-leverage-javascript/SubAppPart5';
-import SubAppPart6 from './components/06-forms/SubAppPart6';
 
 function App() {
-  const [componentSelected, setComponentSelected] = useState("Part-6");
+  const [componentSelected, setComponentSelected] = useState("Part-8");
+
   const part1 = {"m01-useState":[
     "s01-error-example",
     "s02-useState-basics",
@@ -23,7 +26,6 @@ function App() {
     "s04-useState-object",
     "s05-useState-gotcha",
   ]};
-  
   const part2 = {"m02-useEffect":[
     "s01-code-example",
     "s02-useEffect-basics",
@@ -31,7 +33,6 @@ function App() {
     "s04-fetch-data",
     "s05-cleanup-function",
   ]};
-  
   const part3 = {"m03-conditional-rendering":[
     "s01-multiple-returns-basics",
     "s02-multiple-returns-fetch-data",
@@ -41,7 +42,6 @@ function App() {
     "s06-toggle-challenge",
     "s07-user-challenge",
   ]};
-  
   const part4 = {"m04-project-structure":[
     "s01-navbar",
     "s02-first-Component",
@@ -49,11 +49,9 @@ function App() {
     "s04-about-Component",
     "s05-home-Component",
   ]};
-  
   const part5 = {"m05-leverage-js":[
     "s01-Person"
   ]};
-  
   const part6 = {"m06-forms":[
     "s01-controlled-inputs",
     "s02-user-challenge.",
@@ -61,21 +59,20 @@ function App() {
     "s04-other-inputs.",
     "s05-05-form-data.",
   ]};
-  
   const part7 = {"m07-useRef":[
+    "s01-UseRef.",
   ]};
-  
   const part8 = {"m08-custom-hooks":[
+    "s01-Toggle.",
+    "s02-Custom-Hooks.",
   ]};
-  
   const part9 = {"m09-context-api":[
   ]};
-  
   const part10 = {"m10-useReducer":[
   ]};
-  
   const part11 = {"m11-performance":[
   ]};
+
   const options={
     "Counter":{ ids:{"counter":[]}, component:Counter},
     "Part-1":{ ids:{...part1}, component:SubAppPart1},
@@ -84,27 +81,12 @@ function App() {
     "Part-4":{ ids:{...part4}, component:SubAppPart4},
     "Part-5":{ ids:{...part5}, component:SubAppPart5},
     "Part-6":{ ids:{...part6}, component:SubAppPart6},
-    "Part-7":{ ids:{...part7}, component:NoComponent},
-    "Part-8":{ ids:{...part8}, component:NoComponent},
+    "Part-7":{ ids:{...part7}, component:SubAppPart7},
+    "Part-8":{ ids:{...part8}, component:SubAppPart8},
     "Part-9":{ ids:{...part9}, component:NoComponent},
     "Part-10":{ ids:{...part10}, component:NoComponent},
     "Part-11":{ ids:{...part11}, component:NoComponent},
   };  
-
-  const ids = {
-    /** FOR MOMENT, THAN, change this for a component render condicionality */
-    "m01-useState":part1["m01-useState"],
-    "m02-useEffect":part2["m02-useEffect"],
-    "m03-conditional-rendering":part3["m03-conditional-rendering"],
-    "m04-project-structure":part4["m04-project-structure"],
-    "m05-leverage-js":part5["m05-leverage-js"],
-    "m06-forms":part6["m06-forms"],
-    "m07-useRef":part7["m07-useRef"],
-    "m08-custom-hooks":part8["m08-custom-hooks"],
-    "m09-context-api":part9["m09-context-api"],
-    "m10-useReducer":part10["m10-useReducer"],
-    "m11-performance":part11["m11-performance"],
-  };
   
   return (
     <>

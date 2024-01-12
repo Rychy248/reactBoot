@@ -1,10 +1,9 @@
 // third modules
 import { useState, useContext } from "react";
 // local tools
-import InputRowMaker from "./tools/InputRowMaker"
 // local components
 import { BlackContainer } from "../Containers";
-import { idMakerDecoder } from "../tools";
+import { idMakerDecoder, InputRowMaker } from "../tools";
 
 function MultipleInputs({ id }) {
   const userBase = { name:"", email:"", password:"" };
