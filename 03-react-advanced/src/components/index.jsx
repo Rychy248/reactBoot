@@ -9,6 +9,7 @@ import SubAppPart5 from './05-leverage-javascript/SubAppPart5';
 import SubAppPart6 from './06-forms/SubAppPart6';
 import SubAppPart7 from './07-useRef/SubAppPart7';
 import SubAppPart8 from './08-custom-hooks/SubAppPart8';
+import SubAppPart9 from './09-context-api/SubAppPart9';
 
 export {
   Counter,
@@ -20,4 +21,5 @@ export {
   SubAppPart6,
   SubAppPart7,
   SubAppPart8,
+  SubAppPart9
 };

@@ -11,13 +11,14 @@ import {
   SubAppPart5,
   SubAppPart6,
   SubAppPart7,
-  SubAppPart8
+  SubAppPart8,
+  SubAppPart9,
 } from './components';
 
 
 
 function App() {
-  const [componentSelected, setComponentSelected] = useState("Part-8");
+  const [componentSelected, setComponentSelected] = useState("Part-9");
 
   const part1 = {"m01-useState":[
     "s01-error-example",
@@ -54,19 +55,21 @@ function App() {
   ]};
   const part6 = {"m06-forms":[
     "s01-controlled-inputs",
-    "s02-user-challenge.",
-    "s03-multiple-inputs.",
-    "s04-other-inputs.",
-    "s05-05-form-data.",
+    "s02-user-challenge",
+    "s03-multiple-inputs",
+    "s04-other-inputs",
+    "s05-05-form-data",
   ]};
   const part7 = {"m07-useRef":[
-    "s01-UseRef.",
+    "s01-UseRef",
   ]};
   const part8 = {"m08-custom-hooks":[
-    "s01-Toggle.",
-    "s02-Custom-Hooks.",
+    "s01-Toggle",
+    "s02-Custom-Hooks",
   ]};
   const part9 = {"m09-context-api":[
+    "s01-Prop-drilling",
+    "s01-context-api",
   ]};
   const part10 = {"m10-useReducer":[
   ]};
@@ -83,7 +86,7 @@ function App() {
     "Part-6":{ ids:{...part6}, component:SubAppPart6},
     "Part-7":{ ids:{...part7}, component:SubAppPart7},
     "Part-8":{ ids:{...part8}, component:SubAppPart8},
-    "Part-9":{ ids:{...part9}, component:NoComponent},
+    "Part-9":{ ids:{...part9}, component:SubAppPart9},
     "Part-10":{ ids:{...part10}, component:NoComponent},
     "Part-11":{ ids:{...part11}, component:NoComponent},
   };  

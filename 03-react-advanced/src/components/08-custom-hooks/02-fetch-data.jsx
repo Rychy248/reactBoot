@@ -1,58 +1,33 @@
-import { useEffect, useState } from 'react';
 
 import { WhiteContainer } from '../Containers';
 
-const url = 'https://api.github.com/users/QuincyLarson';
+import useFetchUser from './fetchData/useFetchUser';
 
 function FetchData({ id }) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [user, setUser] = useState(null);
+  const gitHubUser = 'Rychy248';
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const resp = await fetch(url);
-        // console.log(resp);
-        if (!resp.ok) {
-          setIsError(true);
-          setIsLoading(false);
-          return;
-        }
+  const [isLoading, isError, user] = useFetchUser(gitHubUser)
 
-        const user = await resp.json();
-        setUser(user);
-      } catch (error) {
-        setIsError(true);
-        // console.log(error);
-      }
-      // hide loading
-      setIsLoading(false);
-    };
-    fetchUser();
-  }, []);
-  // order matters
-  // don't place user JSX before loading or error
-
-  if (isLoading) {
-    return <h2>Loading...</h2>;
-  }
-  if (isError) {
-    return <h2>There was an error...</h2>;
-  }
-  const { avatar_url, name, company, bio } = user;
   return (
     <WhiteContainer specialTitle="Part 8 Custom Hooks - Fetch Data" idTitle={ id } >
-      <div>
-        <img
-          style={{ width: '100px', borderRadius: '25px' }}
-          src={avatar_url}
-          alt={name}
-        />
-        <h2>{name}</h2>
-        <h4>works at {company}</h4>
-        <p>{bio}</p>
-      </div>
+
+      { isLoading && <h2>Loading...</h2> }
+
+      { isError && <h2>There was an error</h2> }
+      
+      { !isLoading && ! isError && (
+        <div>
+          <img
+            style={{ width: '100px', borderRadius: '25px' }}
+            src={user.avatar_url}
+            alt={user.name}
+          />
+          <h2>{user.name} -&gt; Public repos: {user.public_repos}</h2>
+          <h4>Followers: {user.followers} Following: {user.following}</h4>
+          <p>{user.bio}</p>
+        </div>
+      )}
+
     </WhiteContainer>
   );
 };
