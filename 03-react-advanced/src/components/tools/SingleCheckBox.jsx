@@ -1,5 +1,8 @@
 
-function SingleCheckBox({ checkLabel, check , setCheck, enrichStyle={} }) {
+function SingleCheckBox({ checkLabel, check , setCheck, toggleCheck, enrichStyle={} }) {
+
+  const onChange = ()=> setCheck(prev => !prev);;
+
   return (
     <div style={enrichStyle}>
       <input 
@@ -7,7 +10,7 @@ function SingleCheckBox({ checkLabel, check , setCheck, enrichStyle={} }) {
         name={`${checkLabel.replace(/ /g,"-")}-checkbox`}
         type="checkbox"
         checked={check}
-        onChange={ ()=> setCheck(prev => !prev) }
+        onChange={ toggleCheck || onChange}
       />
       <label
         htmlFor={`${checkLabel.replace(/ /g,"-")}-checkbox`}

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const Person = ({ name }) => {
-  console.log('render');
+const Person = ({ name, printLine}) => {
+  printLine("PERSON, re-render");
   // useEffect(() => {
   //   console.log('unfortunately does not fix the issue');
   // }, []);

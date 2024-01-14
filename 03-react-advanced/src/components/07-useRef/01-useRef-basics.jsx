@@ -28,9 +28,16 @@ function UseRefBasics({ id }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User Name Ref: ",userNameRef.current.value);
-    console.log("User Email Ref: ", userEmailRef.current.value);
-    console.log("User Password Ref: ", userPasswordRef.current.value);};
+    alert(`
+      \nUser Name Ref: ",${userNameRef.current.value}
+      \nUser Email Ref: ", ${userEmailRef.current.value}
+      \nUser Password Ref: ", ${userPasswordRef.current.value}`
+    );
+
+    userNameRef.current.value = "";
+    userEmailRef.current.value = "";
+    userPasswordRef.current.value = "";
+  };
 
   return (
     <BlackContainer specialTitle="Part 7 - UseRef" idTitle={ id } >
