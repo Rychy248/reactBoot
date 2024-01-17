@@ -1,15 +1,17 @@
+// using memo function
+import { memo } from "react";
 
 // context
-import { useComponentAContext } from "./useComponentAContext";
+import { useComponentBContext } from "./useComponentBContext";
 
 // Component
 const Person = ({ name, id, printLine }) => {
   // context consumer
-  const { dispatchPeople } = useComponentAContext();
+  const { dispatchPeople } = useComponentBContext();
   // handlers
   const onClick = () =>{ dispatchPeople({ type:"DELETE", id, name }) };
 
-  printLine("ComponentA > List > Person - Rendered")
+  printLine("ComponentB > List > Person - Rendered")
 
   return (
     <div>
@@ -18,4 +20,5 @@ const Person = ({ name, id, printLine }) => {
     </div>
   );
 };
-export default Person;
+
+export default memo(Person);

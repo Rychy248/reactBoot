@@ -1,3 +1,4 @@
+// function memo
 import { memo } from 'react';
 
 import Item from './Person';

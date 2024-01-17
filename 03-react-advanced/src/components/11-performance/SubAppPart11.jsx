@@ -4,6 +4,8 @@ import LowerState2 from "./02-lower-state-solution";
 import LowerStateChallenge from "./03-lower-state-challenge";
 import LowerStateHooks from "./04-hooks";
 import LowerStateFunctionMemo from "./05-functionMemo2";
+import Memoization from "./06-memo";
+import LatestReact from "./07-react-18";
 
 /**
  * 
@@ -20,6 +22,8 @@ function SubAppPart11({ ids }) {
       <LowerStateChallenge id={arrayIds[2]} /> {/** Black */}
       <LowerStateHooks id={arrayIds[3]} /> {/** White */}
       <LowerStateFunctionMemo id={arrayIds[4]} /> {/** BLACK */}
+      <Memoization id={arrayIds[5]} /> {/** White */}
+      <LatestReact id={arrayIds[6]} /> {/** Black */}
     </>
   )
 }

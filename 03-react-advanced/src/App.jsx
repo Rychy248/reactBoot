@@ -80,9 +80,10 @@ function App() {
     "s01-performance-lower-state-problem",
     "s02-performance-lower-state-solution",
     "s03-performance-lower-state-challenge",
-    "s04-performance-hooks",
+    "s04-performance-hooks-useCallback",
     "s05-performance-function-memo",
-    "s06-performance-react18",
+    "s06-performance-Memoization",
+    "s07-performance-react18",
   ]};
 
   const options={
