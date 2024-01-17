@@ -81,7 +81,8 @@ function App() {
     "s02-performance-lower-state-solution",
     "s03-performance-lower-state-challenge",
     "s04-performance-hooks",
-    "s05-performance-react18",
+    "s05-performance-function-memo",
+    "s06-performance-react18",
   ]};
 
   const options={

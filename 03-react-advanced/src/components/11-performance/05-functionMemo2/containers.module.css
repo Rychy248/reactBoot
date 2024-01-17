@@ -1,0 +1,29 @@
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+  margin: 1rem;
+}
+.item-a, .item-b{
+  place-self: stretch;
+  justify-content: center;
+  padding: 0.5rem;
+  border-color: aliceblue;
+  background-color: rgb(84, 84, 84);
+  border-width: 4px;
+  border-style: inset;
+}
+
+.item-a {
+  grid-column-start: 1;
+}
+.item-b {
+  grid-column-start: 2;
+}
